@@ -1,0 +1,55 @@
+"Act as an expert SDET. Create a scalable, enterprise-grade web automation framework from scratch using Python, Playwright, and pytest. Use the Model Context Protocol (MCP) to interact with a live browser. The framework must follow the Page Object Model (POM) design pattern. 
+Technology Stack:
+•	Language: Python
+•	Test Runner: Pytest
+•	Automation Library: Playwright (sync API preferred for simplicity, or async if required)
+•	Pattern: Page Object Model (POM)
+•	AI Tooling: Playwright MCP (to explore the target site and generate initial locators)
+
+Application To Be Tested:
+TestURL: https://automationexercise.com/
+Name: TestUserYam
+Email Address: yamunagoodigood@gmail.com
+
+IMPORTANT:
+•	DO NOT generate the full test code immediately based on the scenario alone. 
+•	DO gather context by executing steps one at a time using the Playwright MCP tools. 
+•	These steps may include: inspecting DOM structure, fetching selectors, validating element visibility, extracting attritutes
+
+
+Phase 1: Project Structure & Setup 
+1.	Generate a project structure with dedicated folders: 
+/pages (for POM classes),
+ /tests (for pytest scripts), 
+/utils (for common helpers), and 
+/config (for environment variables).
+
+Project structure Example:
+
+ 
+
+2.	Provide a requirements.txt file and a pytest.ini for basic configuration.
+3.	Create a conftest.py file to handle global fixtures, including browser initialization and custom logging. 
+4.  Create healing.py, ai_client.py and locator_store.json to Include self-healing strategy when test fails due to element is not clickable or element is not found.
+
+Phase 2: Page Object Model (POM) Implementation
+1.	Using the Playwright MCP server, navigate to [TestUrl] to identify key elements (locators).
+2.	Generate a BasePage class in /pages that encapsulates common Playwright actions like navigate, click_element, and wait_for_selector.
+3.	Create a specific page class (e.g., LoginPage) that inherits from BasePage. Define locators using self.page.locator() and methods for business flows (e.g., login_to_app). 
+
+Phase 3: Test Development & Execution
+1.	Write a sample test in /tests/test_login.py that utilizes a Pytest fixture for the page object and includes a positive assertion.
+2.	Ensure the tests use web-first assertions (e.g., expect(page.locator(...)).to_be_visible()).
+3.	Include instructions on how to run tests in headed/headless modes and how to generate an HTML report using pytest-html." 
+4.	Reporting: Configure the framework to support pytest-html or allure-pytest for test reporting.
+
+
+NOTES:
+•	Use plain, readable locators (e.g., getByRole, locator('text=Login'), etc.). 
+•	Avoid hardcoding unless required. 
+•	Follow Page Object Model best practices
+•	Keep code clean, modular, and maintainable
+•	Do NOT execute or run the tests
+•	Follow Playwright best practices for stability and retries. 
+-   Take a screenshot when the test fails and store it in separate folder under reports.
+Goal: To generate reliable, maintainable, and context-aware Playwright tests using AI + MCP.

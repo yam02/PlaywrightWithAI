@@ -1,0 +1,87 @@
+{
+  "home.logo": {
+    "description": "Automation Exercise website logo image in the top-left of the home page header",
+    "primary": "img[alt=\"Website for automation practice\"]",
+    "healed": []
+  },
+  "home.nav_home": {
+    "description": "Home navigation link in the main top header nav bar",
+    "primary": "a[href=\"/\"] >> nth=0",
+    "healed": []
+  },
+  "home.nav_products": {
+    "description": "Products navigation link in the main top header nav bar",
+    "primary": "a[href=\"/products\"]",
+    "healed": []
+  },
+  "home.nav_cart": {
+    "description": "Cart navigation link in the main top header nav bar",
+    "primary": "a[href=\"/view_cart\"] >> nth=0",
+    "healed": []
+  },
+  "home.nav_signup_login": {
+    "description": "Signup / Login navigation link in the main top header nav bar that routes to /login",
+    "primary": "a[href=\"/login\"]",
+    "healed": []
+  },
+  "home.nav_contact": {
+    "description": "Contact us navigation link in the main top header nav bar",
+    "primary": "a[href=\"/contact_us\"]",
+    "healed": []
+  },
+  "home.logged_in_label": {
+    "description": "Logged in as <user> label that appears in the header once a user is authenticated",
+    "primary": "a:has-text(\"Logged in as\")",
+    "healed": []
+  },
+  "login.login_heading": {
+    "description": "Heading 'Login to your account' above the login form on /login",
+    "primary": "h2:has-text(\"Login to your account\")",
+    "healed": []
+  },
+  "login.login_email": {
+    "description": "Email Address text input inside the Login to your account form on /login",
+    "primary": "input[data-qa=\"login-email\"]",
+    "healed": []
+  },
+  "login.login_password": {
+    "description": "Password input inside the Login to your account form on /login",
+    "primary": "input[data-qa=\"login-password\"]",
+    "healed": []
+  },
+  "login.login_button": {
+    "description": "Login submit button inside the Login to your account form on /login",
+    "primary": "button[data-qa=\"login-button\"]",
+    "healed": []
+  },
+  "login.login_error": {
+    "description": "Red inline error 'Your email or password is incorrect!' shown on failed login",
+    "primary": "p:has-text(\"Your email or password is incorrect!\")",
+    "healed": []
+  },
+  "login.signup_heading": {
+    "description": "Heading 'New User Signup!' above the signup form on /login",
+    "primary": "h2:has-text(\"New User Signup!\")",
+    "healed": []
+  },
+  "login.signup_name": {
+    "description": "Name text input inside the New User Signup form on /login",
+    "primary": "input[data-qa=\"signup-name\"]",
+    "healed": []
+  },
+  "login.signup_email": {
+    "description": "Email Address input inside the New User Signup form on /login",
+    "primary": "input[data-qa=\"signup-email\"]",
+    "healed": []
+  },
+  "login.signup_button": {
+    "description": "Signup submit button inside the New User Signup form on /login",
+    "primary": "button[data-qa=\"signup-button\"]",
+    "healed": []
+  },
+  "login.signup_email_exists_error": {
+    "description": "Inline error 'Email Address already exist!' shown when signing up with a taken email",
+    "primary": "p:has-text(\"Email Address already exist!\")",
+    "healed": []
+  }
+}
