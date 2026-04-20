@@ -174,7 +174,7 @@ def _heal_and_act(
     for sel in candidates:
         tried.append(sel)
         printable_val = "***" if sensitive else value
-        log.info("Trying %s on '%s' via %s (value=%s)", action, key, sel, printable_val)
+        log.debug("try %s on '%s' via %s (value=%s)", action, key, sel, printable_val)
         try:
             _run_action(page, sel, action, value=value)
             if sel != candidates[0]:

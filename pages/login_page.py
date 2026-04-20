@@ -29,11 +29,13 @@ class LoginPage(BasePage):
         return self
 
     def login(self, email: str, password: str) -> None:
+        self.log.info("login attempt as %s", email)
         self.fill_input(self.login_email, email)
         self.fill_input(self.login_password, password, sensitive=True)
         self.click_element(self.login_button)
 
     def start_signup(self, name: str, email: str) -> None:
+        self.log.info("signup form submit: name=%s email=%s", name, email)
         self.fill_input(self.signup_name, name)
         self.fill_input(self.signup_email, email)
         self.click_element(self.signup_button)

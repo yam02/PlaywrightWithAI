@@ -6,6 +6,7 @@ venv/
 .pytest_cache/
 reports/
 logs/
+results/
 allure-results/
 .playwright/
 node_modules/

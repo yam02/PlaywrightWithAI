@@ -33,7 +33,7 @@ class BasePage:
         if key and description:
             safe_click(self.page, key, description)
             return
-        self.log.info("Clicking %s", locator)
+        self.log.debug("click %s", locator)
         locator.click()
 
     def fill_input(
@@ -48,7 +48,7 @@ class BasePage:
         if key and description:
             safe_fill(self.page, key, value, description, sensitive=sensitive)
             return
-        self.log.info("Filling %s with %s", locator, "***" if sensitive else value)
+        self.log.debug("fill %s with %s", locator, "***" if sensitive else value)
         locator.fill(value)
 
     def hover_element(
@@ -63,11 +63,11 @@ class BasePage:
             return
         if locator is None:
             raise ValueError("hover_element requires either a locator or key+description")
-        self.log.info("Hovering %s", locator)
+        self.log.debug("hover %s", locator)
         locator.hover()
 
     def wait_for_selector(self, selector: str, *, state: str = "visible", timeout: int | None = None) -> Locator:
-        self.log.info("Waiting for selector=%s state=%s", selector, state)
+        self.log.debug("wait_for_selector=%s state=%s", selector, state)
         self.page.wait_for_selector(selector, state=state, timeout=timeout)
         return self.page.locator(selector)
 

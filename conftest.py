@@ -10,15 +10,13 @@ import pytest
 from playwright.sync_api import Browser, BrowserContext, Page, Playwright, sync_playwright
 
 from config.config import config
-from utils.logger import get_logger
+from utils.logger import RUN_DIR, SCREENSHOTS_DIR, get_logger
 
 log = get_logger("conftest")
+log.info("Run artifacts directory: %s", RUN_DIR)
 
 ARTIFACTS_DIR = Path(__file__).resolve().parent / "reports" / "artifacts"
 ARTIFACTS_DIR.mkdir(parents=True, exist_ok=True)
-
-SCREENSHOTS_DIR = Path(__file__).resolve().parent / "results" / "screenshots"
-SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def pytest_addoption(parser: pytest.Parser) -> None:
